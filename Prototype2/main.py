@@ -7,12 +7,7 @@ from spellchecker import SpellChecker
 nltk.download('punkt')
 
 # Load spaCy model (en_core_web_lg with 300D embeddings)
-try:
-    nlp = spacy.load("en_core_web_lg")
-    print(f"Using model with vector shape: {nlp.vocab.vectors.shape}")  # Should be (20000, 300)
-except OSError:
-    print("Error: 'en_core_web_lg' not found. Run 'python -m spacy download en_core_web_lg' and try again.")
-    exit(1)
+nlp = spacy.load("en_core_web_lg")
 
 # Load the saved model
 model = keras.models.load_model("diagnosis_model.h5")
