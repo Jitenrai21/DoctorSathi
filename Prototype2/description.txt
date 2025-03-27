@@ -5,3 +5,26 @@ Opted to use Embeddings rather than OHE for:
 Flexibility: Handles free-text inputs without needing exact matches to a predefined symptom list.
 Scalability: Dense vectors (e.g., 96D) are more compact than one-hot vectors (e.g., 1,000D for 1,000 symptoms).
 Semantics: Captures relationships (e.g., "tired" ≈ "fatigue") via pre-trained language models.
+
+Free-Text Input with Embeddings
+Uses spaCy’s en_core_web_lg model to convert free-text symptom descriptions into 300-dimensional embeddings, replacing the earlier one-hot encoding method.
+Scalability: Fixed input size (300D) regardless of symptom count, making it more efficient than growing one-hot vectors.
+
+Enhanced Dataset
+Expanded from 15 to 50 symptom-disease pairs.
+Impact: More data improves model accuracy and robustness, though 50 samples is still small for a production system.
+
+Model Architecture
+Structure:
+Input layer: 300 units (for 300D embeddings).
+Hidden layers: Dense(64, relu), Dense(32, relu).
+Output layer: Dense(12, softmax) for 12 diseases.
+
+Training:
+Optimizer: Adam.
+Loss: Categorical cross-entropy.
+50 epochs, batch size 4 (small dataset).
+Performance:
+With 50 samples, accuracy should improve over the 15-sample version, though still limited by data size.
+Embedding-based input allows the model to generalize beyond exact training phrases.
+Scalability: Simple feedforward network is sufficient for now but could be upgraded (e.g., LSTM, Transformer) for larger datasets or sequential inputs.
