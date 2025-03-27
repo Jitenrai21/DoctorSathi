@@ -1,0 +1,4 @@
+Data Representation: Symptoms are one-hot encoded into binary vectors (e.g., [1, 0, 1, 0, ...] for "fever" and "fatigue").
+Model: A small feedforward neural network (two hidden layers with 16 units each) with softmax output for disease classification.
+Training: Uses categorical cross-entropy loss and one-hot encoded disease labels (e.g., [0, 1, 0, ...] for "Common Cold").
+Scale: Currently handles 8 symptoms and 10 diseases with 20 samples.

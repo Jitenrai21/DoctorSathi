@@ -1,0 +1,7 @@
+spaCy: For pre-trained embeddings (e.g., en_core_web_md model with 96D vectors).
+Keras: To train a neural network on embedded symptom inputs.
+
+Opted to use Embeddings rather than OHE for:
+Flexibility: Handles free-text inputs without needing exact matches to a predefined symptom list.
+Scalability: Dense vectors (e.g., 96D) are more compact than one-hot vectors (e.g., 1,000D for 1,000 symptoms).
+Semantics: Captures relationships (e.g., "tired" ≈ "fatigue") via pre-trained language models.

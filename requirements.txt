@@ -3,3 +3,5 @@ numpy
 scikit-learn
 tensorflow
 keras
+spacy #python -m spacy download en_core_web_lg
+pyspellchecker

@@ -19,18 +19,23 @@ def extract_symptoms(user_input):
     
     # Check for multi-word symptoms first
     i = 0
+    
+    # Find the maximum symptom length in symptom_list
+    max_symptom_length = max(len(symptom.split()) for symptom in symptom_list)  # e.g., 3 for "shortness of breath"
+
     while i < len(tokens):
-        # Try two-word combinations
-        if i + 1 < len(tokens):
-            two_word_symptom = f"{tokens[i]} {tokens[i + 1]}"
-            if two_word_symptom in symptom_list:
-                extracted_symptoms.append(two_word_symptom)
-                i += 2  # Skip the next token since it’s part of the symptom
-                continue
-        # Check single-word symptoms
-        if tokens[i] in symptom_list:
-            extracted_symptoms.append(tokens[i])
-        i += 1
+        found = False
+        # Check phrases from max length down to 1
+        for length in range(max_symptom_length, 0, -1):
+            if i + length <= len(tokens):
+                phrase = " ".join(tokens[i:i + length])
+                if phrase in symptom_list:
+                    extracted_symptoms.append(phrase)
+                    i += length  # Skip ahead by the length of the matched phrase
+                    found = True
+                    break
+        if not found:
+            i += 1  # Move to next token if no match
     
     return extracted_symptoms
 
