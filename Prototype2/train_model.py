@@ -61,12 +61,12 @@ data = [
 
 # Disease list
 disease_list = sorted(set(d[1] for d in data))
-
+print(f"Diseases: {disease_list}")
 # Convert symptoms to embeddings and prepare data
 X = []
 y = []
 for symptoms, disease in data:
-    doc = nlp(symptoms)
+    doc = nlp(symptoms) # Process symptom text into a spaCy document
     embedding = doc.vector  # 300D embedding
     X.append(embedding)
     y.append(disease_list.index(disease))

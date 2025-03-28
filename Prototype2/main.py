@@ -4,7 +4,7 @@ import spacy
 import nltk
 from nltk.tokenize import word_tokenize
 from spellchecker import SpellChecker
-nltk.download('punkt')
+nltk.download('punkt') # for word_tokenize
 
 # Load spaCy model (en_core_web_lg with 300D embeddings)
 nlp = spacy.load("en_core_web_lg")
@@ -26,7 +26,7 @@ def correct_spelling(user_input):
     corrected_tokens = []
     for token in tokens:
         # Check if the token is misspelled
-        if spell.unknown([token]):
+        if spell.unknown([token]): #check if the token isnot in dictionary(misspelled)
             corrected = spell.correction(token)
             corrected_tokens.append(corrected if corrected else token)  # Use correction or original if no correction
         else:
@@ -37,7 +37,7 @@ def correct_spelling(user_input):
 def get_symptom_embedding(user_input):
     corrected_input = correct_spelling(user_input)
     doc = nlp(corrected_input)
-    return doc.vector  # 300D embedding
+    return doc.vector  # 300D embedding (average of token vectors)
 
 # Diagnosis function
 def diagnose(user_input):
@@ -64,7 +64,7 @@ def main():
             print("Sorry! Please provide some symptoms. :(")
         else:
             print(f"Original Input: {user_input}")
-            print(f"Corrected Symptoms: {symptoms}")
+            print(f"Extracted Symptoms: {symptoms}")
             print(f"Predicted Disease: {disease}")
             print(f"Probabilities: {probs}")
             print("\nEnter more symptoms or 'exit' to quit:")
