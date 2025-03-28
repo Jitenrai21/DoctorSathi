@@ -1,7 +1,12 @@
 nltk
 numpy
+pandas
 scikit-learn
 tensorflow
-keras
+tf-keras
 spacy #python -m spacy download en_core_web_lg
 pyspellchecker
+transformers
+torch
+fuzzywuzzy
+python-Levenshtein
