@@ -1,0 +1,14 @@
+The approach with transfer learning. Fine tuning from BERT model.
+
+Transfer Learning Concept
+Base Model: Use a pre-trained BioBERT model (e.g., dmis-lab/biobert-base-cased-v1.1), which is already trained on vast biomedical text (e.g., PubMed).
+Fine-Tuning: Add a small classification head (e.g., Dense layer) on top of BioBERT and fine-tune it on your DiseaseAndSymptoms.csv data. Freeze most of BioBERT’s layers to retain its general knowledge, and train only the top layers or a subset to adapt to your task.
+Input Handling: Pass full symptom strings directly to BioBERT without breaking them into individual words or relying on fuzzy matching for embedding. This preserves context, which BioBERT can interpret effectively.
+Data Limitation: With 410 samples and 41 diseases, fine-tuning with careful regularization (e.g., dropout, early stopping) will help avoid overfitting.
+# Optional: Unfreeze some BioBERT layers for further fine-tuning (if confidence is still low)
+# biobert.trainable = True  # to fine-tune BioBERT
+# model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=1e-5), loss="categorical_crossentropy", metrics=["accuracy"])
+# model.fit([X_train_ids, X_train_mask], y_train, validation_data=([X_test_ids, X_test_mask], y_test), epochs=5, batch_size=8)
+
+*** The prototype that never promised any improvements. *** 
+Thus, DROPPED!!!
