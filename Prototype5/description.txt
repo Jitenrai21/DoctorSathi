@@ -1,0 +1,14 @@
+We’ll:
+
+Use the full 4920 rows.
+Train BioBERT in two phases: head-only (frozen BioBERT) then fine-tuning (unfrozen).
+Increase batch size to 32 (suitable for 4920 rows) and adjust epochs.
+Add validation metrics to monitor performance.
+
+Overview of Training
+Dataset: 4920 rows, 41 unique diseases, 120 samples per class.
+Split: 80/20 (~3936 training, ~984 validation samples).
+Phases:
+Head-Only Training: 15 epochs, BioBERT frozen, learning rate 5e-5.
+Fine-Tuning: 5 epochs, BioBERT unfrozen, learning rate 1e-5.
+Final Metrics: Validation accuracy 95.83%, validation loss 2.6695.
