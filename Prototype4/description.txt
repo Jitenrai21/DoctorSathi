@@ -12,3 +12,8 @@ Data Limitation: With 410 samples and 41 diseases, fine-tuning with careful regu
 
 *** The prototype that never promised any improvements. *** 
 Thus, DROPPED!!!
+
+Possible Problems:
+Model Training: The BioBERT head might not have been trained long enough, or fine-tuning wasn’t effective.
+Data Loading: The script might have loaded a subset (e.g., 410 rows) instead of the full 4920 due to a file path or preprocessing error.
+Hyperparameters: Batch size, learning rate, or epochs might not have been optimized for this scale(4920 rows).
