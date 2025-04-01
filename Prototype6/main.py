@@ -1,14 +1,14 @@
 import argparse
 import numpy as np
 import pandas as pd
-import re
 import tensorflow as tf
+from gensim.models import KeyedVectors
 from tensorflow.keras.models import load_model
 
 # Paths to files (adjust as needed)
-MODEL_PATH = "biowordvec_diagnosis_model.h5"
+MODEL_PATH = "biowordvec_diagnosis_model.keras"  # Updated to .keras
 DATA_PATH = "DiseaseAndSymptoms.csv"
-EMBEDDING_DICT_PATH = "symptom_embeddings.npy"
+EMBEDDING_PATH = r"C:/Users/ACER/Downloads/bio_embedding_extrinsic.bin"
 
 def load_disease_list(data_path):
     """
@@ -22,47 +22,30 @@ def load_disease_list(data_path):
 
 def preprocess_symptoms(symptoms):
     """
-    Preprocess symptoms the same way as in the notebook:
-    - Removes special characters, trims whitespace.
-    - Splits by commas, removes duplicates, sorts, and joins them back.
+    Preprocess symptoms:
+    - Split by commas, strip whitespace, remove duplicates, sort, join with spaces.
     """
-    # Remove unwanted special characters (except commas for splitting)
-    symptoms = re.sub(r"[^a-zA-Z0-9, ]", "", symptoms)
-    
-    # Split symptoms, strip spaces, remove duplicates, sort
-    symptom_list = sorted(set(s.strip().lower() for s in symptoms.split(",") if s.strip()))
-
+    symptom_list = sorted(set(s.strip() for s in symptoms.split(",")))
     return " ".join(symptom_list)
 
-def load_precomputed_embeddings(embedding_dict_path):
+def get_symptom_embedding(text, word_vectors):
     """
-    Load the precomputed symptom embeddings.
-    Returns a dictionary with symptoms and their embeddings.
+    Generate the average embedding for a symptom string using BioWordVec embeddings.
     """
-    data = np.load(embedding_dict_path, allow_pickle=True).item()
-    return data["symptoms"], data["embeddings"]
+    words = text.split()
+    vectors = [word_vectors[word] for word in words if word in word_vectors]
+    return np.mean(vectors, axis=0) if vectors else np.zeros(word_vectors.vector_size)
 
-def find_closest_symptom_embedding(input_symptoms, precomputed_symptoms, precomputed_embeddings):
+def predict_disease(symptoms, model, word_vectors, disease_list):
     """
-    Find the embedding for the input symptoms by matching with precomputed symptoms.
-    Uses exact string matching for simplicity.
+    Predict the disease based on input symptoms.
     """
-    processed_symptoms = preprocess_symptoms(input_symptoms)
+    # Preprocess symptoms
+    processed_symptoms = preprocess_symptoms(symptoms)
     print(f"Processed symptoms: {processed_symptoms}")
 
-    # Look for an exact match
-    try:
-        idx = precomputed_symptoms.index(processed_symptoms)
-        embedding = precomputed_embeddings[idx]
-        return embedding
-    except ValueError:
-        raise ValueError(f"No exact match found for symptoms: {processed_symptoms}. Try a different combination.")
-
-def predict_disease(symptoms, model, precomputed_symptoms, precomputed_embeddings, disease_list):
-    """
-    Predict the disease based on input symptoms using precomputed embeddings.
-    """
-    embedding = find_closest_symptom_embedding(symptoms, precomputed_symptoms, precomputed_embeddings)
+    # Generate embedding
+    embedding = get_symptom_embedding(processed_symptoms, word_vectors)
     embedding = np.expand_dims(embedding, axis=0)  # Shape: (1, 200)
 
     # Predict
@@ -94,10 +77,10 @@ def main():
     disease_list = load_disease_list(DATA_PATH)
     print(f"Loaded {len(disease_list)} disease classes.")
 
-    # Load the precomputed embeddings
-    print("Loading precomputed embeddings...")
-    precomputed_symptoms, precomputed_embeddings = load_precomputed_embeddings(EMBEDDING_DICT_PATH)
-    print(f"Loaded precomputed embeddings with {len(precomputed_symptoms)} samples.")
+    # Load the embeddings
+    print("Loading BioWordVec embeddings...")
+    word_vectors = KeyedVectors.load_word2vec_format(EMBEDDING_PATH, binary=True)
+    print(f"Loaded embeddings with vector size: {word_vectors.vector_size}")
 
     # Load the model
     print("Loading trained model...")
@@ -107,9 +90,7 @@ def main():
     # Predict
     print("\nPredicting disease...")
     try:
-        predicted_disease, confidence = predict_disease(
-            args.symptoms, model, precomputed_symptoms, precomputed_embeddings, disease_list
-        )
+        predicted_disease, confidence = predict_disease(args.symptoms, model, word_vectors, disease_list)
         print(f"\nPredicted Disease: {predicted_disease}")
         print(f"Confidence: {confidence:.4f}")
     except Exception as e:
