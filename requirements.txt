@@ -10,3 +10,4 @@ transformers
 torch
 fuzzywuzzy
 python-Levenshtein
+gensim
