@@ -1,0 +1,4 @@
+This method combines the strengths of both worlds:
+
+Pre-Trained Knowledge: Start with BioWordVec embeddings, which are pre-trained on a large biomedical corpus and capture semantic relationships (e.g., "fatigue" ≈ "tired").
+Task-Specific Adjustment: Fine-tune the embeddings during training to better align with your disease prediction task, potentially improving the model’s ability to distinguish between diseases like Common Cold and Bronchial Asthma for minor symptom sets like "cough fatigue".
