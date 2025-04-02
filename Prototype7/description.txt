@@ -1,0 +1,2 @@
+Retraining with an Embedding Layer
+The Embedding Layer approach involves retraining the model to include an embedding layer that maps symptom words to embeddings directly, eliminating the dependency on bio_embedding_extrinsic.bin. The model will process raw symptom text (e.g., "cough fatigue") by tokenizing the words, mapping them to learned embeddings, and predicting the disease. This allows the model to learn embeddings tailored to the disease prediction task, which might better distinguish between diseases like Common Cold and Bronchial Asthma for minor symptom sets.
