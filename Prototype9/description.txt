@@ -1,3 +1,16 @@
 Since the Fine-Tune BioWordVec Embeddings approach didn’t fully resolve the issue, let’s move to the Transformer-Based Architecture approach. A transformer can better capture the relationships between symptoms by using self-attention to weigh the importance of each symptom in the context of the others. For example, it might learn that "fever, cough" together are more indicative of Common Cold than Bronchial Asthma, even if "cough" alone might lean toward asthma.
 
 We’ll keep the fine-tuned BioWordVec embeddings (since they improved confidence slightly) and modify the model architecture to include a transformer layer. We’ll also use the augmented dataset to ensure robustness to partial symptom inputs.
+
+Approach
+Data: The dataset (DiseaseAndSymptoms.csv) contains 4920 samples across 41 diseases, with symptoms listed in multiple columns. Symptoms are combined into a single string per disease, and the dataset is augmented by generating partial symptom combinations.
+Embeddings: Both scripts use BioWordVec embeddings (200-dimensional) to represent symptoms. Each symptom string is converted into an embedding by averaging the embeddings of individual words.
+Training (Notebook):
+Augments the dataset to 320,730 samples (256,584 training, 64,146 validation).
+Trains a feedforward neural network on the augmented data, achieving 96.19% validation accuracy.
+Prediction (main.py):
+Takes comma-separated symptoms as input, converts them into a space-separated string, and generates an embedding.
+Uses the trained model to predict the disease and confidence score.
+Model Implementation
+Model Type: Feedforward neural network.
+Input: 200-dimensional BioWordVec embeddings (average of symptom word embeddings).
