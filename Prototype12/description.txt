@@ -1,0 +1,2 @@
+Trying on smaller architecture.
+Augmentation using SMOTE and embedding context.

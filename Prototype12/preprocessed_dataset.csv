@@ -1,0 +1,478 @@
+label,extracted_symptoms
+Psoriasis,dry scaly patches itchy rash skin rash
+Psoriasis,peeling stinging sensation
+Psoriasis,joint pain pain
+Psoriasis,silver like dusting
+Psoriasis,
+Psoriasis,deep cracks
+Psoriasis,itchy
+Psoriasis,joint pain pain peeling skin rash
+Psoriasis,fatigue malaise
+Psoriasis,itchy peeling rash
+Psoriasis,rash
+Psoriasis,itching rash
+Psoriasis,pain prone to infections
+Psoriasis,peeling
+Psoriasis,pain peeling
+Psoriasis,pain silver like dusting
+Psoriasis,pain rash skin rash
+Psoriasis,pain
+Psoriasis,joint pain pain peeling rash skin rash
+Psoriasis,itching pain rash
+Psoriasis,prone to infections
+Psoriasis,rash skin flaking skin rash
+Psoriasis,joint pain pain rash skin rash
+Psoriasis,itching pain peeling rash
+Psoriasis,burning sensation peeling
+Varicose Veins,fatigue prominent veins rash
+Varicose Veins,
+Varicose Veins,bruising
+Varicose Veins,cramps pain
+Varicose Veins,cramps fatigue obesity
+Varicose Veins,swelling
+Varicose Veins,cramps
+Varicose Veins,pain
+Varicose Veins,rash
+Varicose Veins,cramps itchy
+Varicose Veins,itchy
+Varicose Veins,itchy rash
+Varicose Veins,fatigue
+Varicose Veins,prominent veins
+Varicose Veins,pain rash
+Varicose Veins,cramps obesity
+Typhoid,belly pain chills constipation fever pain
+Typhoid,abdominal cramps bloating cramps diarrhea
+Typhoid,abdominal pain chills fever pain
+Typhoid,constipation diarrhea fever headache vomiting
+Typhoid,belly pain fever headache nausea pain vomiting
+Typhoid,fatigue pain
+Typhoid,constipation diarrhea headache
+Typhoid,constipation diarrhea fever headache high fever
+Typhoid,belly pain difficulty breathing pain
+Typhoid,abdominal pain diarrhea pain vomiting
+Typhoid,chills fever headache high fever pain
+Typhoid,constipation diarrhea pain
+Typhoid,belly pain constipation pain
+Typhoid,abdominal pain constipation pain vomiting
+Typhoid,bloating constipation pain
+Typhoid,belly pain chills constipation fever headache pain
+Typhoid,belly pain nausea vomiting
+Typhoid,constipation
+Typhoid,constipation diarrhea fever headache high fever vomiting
+Typhoid,chills constipation headache pain
+Typhoid,pain vomiting
+Typhoid,abdominal pain diarrhea headache pain vomiting
+Typhoid,constipation fever pain
+Typhoid,nausea vomiting
+Typhoid,belly pain fever headache high fever pain
+Typhoid,fatigue fever pain
+Typhoid,constipation fever
+Typhoid,diarrhea vomiting
+Typhoid,chills fever
+Typhoid,diarrhea fever pain vomiting
+Typhoid,diarrhea headache pain
+Typhoid,bloating chills constipation fever high fever pain
+Typhoid,fever headache high fever
+Typhoid,fever nausea pain
+Typhoid,chills fatigue fever high fever vomiting
+Typhoid,abdominal pain pain weight loss
+Typhoid,constipation vomiting
+Typhoid,diarrhea fever nausea
+Typhoid,chills fever headache pain
+Typhoid,constipation diarrhea fever headache high fever pain vomiting
+Typhoid,fever headache high fever nausea pain vomiting
+Typhoid,constipation diarrhea
+Typhoid,fever
+Chicken pox,itching rash
+Chicken pox,fatigue lethargic
+Chicken pox,fever high fever
+Chicken pox,
+Chicken pox,fever red spots
+Chicken pox,red spots
+Chicken pox,itching lethargic
+Chicken pox,itching rash skin rash
+Chicken pox,fever high fever red spots
+Chicken pox,fever rash skin rash
+Chicken pox,itchy red spots
+Chicken pox,itching itchy rash
+Chicken pox,fever headache high fever severe headache
+Chicken pox,fatigue fever headache high fever swollen lymph nodes
+Chicken pox,itching
+Chicken pox,fever headache lethargic severe headache
+Chicken pox,fever red spots swollen lymph nodes
+Chicken pox,itching rash severe itching
+Chicken pox,headache red spots severe headache
+Chicken pox,fever headache itching red spots severe headache
+Chicken pox,pain
+Chicken pox,pain rash skin rash
+Chicken pox,fever headache high fever
+Chicken pox,itching pain
+Chicken pox,fatigue fever headache pain rash red spots skin rash
+Chicken pox,itching red spots
+Chicken pox,vomiting
+Chicken pox,fever headache high fever red spots severe headache vomiting
+Chicken pox,fever headache red spots
+Chicken pox,fever headache
+Chicken pox,fever
+Chicken pox,red spots vomiting
+Chicken pox,fever headache itchy red spots
+Chicken pox,fever headache itching red spots severe itching
+Chicken pox,fever high fever lethargic red spots
+Chicken pox,fever high fever itching
+Impetigo,rash skin rash
+Impetigo,blistering sores fever high fever skin rash
+Impetigo,fever high fever yellow rust colored ooze
+Impetigo,fever high fever rash
+Impetigo,fever high fever
+Impetigo,rash
+Impetigo,fatigue fever high fever itchy rash
+Impetigo,fever itchy weakness
+Impetigo,
+Impetigo,burning sensation rash
+Impetigo,chills fever high fever
+Impetigo,rash red inflamed skin
+Impetigo,blistering sores fever itchy pain
+Impetigo,fever headache
+Impetigo,rash yellow rust colored ooze
+Impetigo,pain
+Impetigo,burning sensation
+Impetigo,fever headache high fever
+Impetigo,fever high fever itchy
+Impetigo,fever high fever rash skin rash
+Impetigo,fever rash
+Dengue,itching joint pain pain rash skin rash vomiting
+Dengue,back pain chills red spots
+Dengue,joint pain pain
+Dengue,back pain pain vomiting
+Dengue,chills fever headache high fever pain severe headache
+Dengue,fatigue
+Dengue,chills headache pain severe headache
+Dengue,pain red spots
+Dengue,chills fever high fever itchy red spots
+Dengue,back pain muscle pain pain vomiting
+Dengue,back pain pain
+Dengue,fever pain rash skin rash swelling
+Dengue,chills fever high fever red spots
+Dengue,chills fever joint pain pain
+Dengue,cramps dizziness pain stomach cramps vomiting
+Dengue,fever high fever pain sweating weakness
+Dengue,fatigue vomiting
+Dengue,fever headache red spots
+Dengue,loss of appetite nausea pain
+Dengue,itching muscle pain pain red spots
+Dengue,chills fever headache itching rash skin rash
+Dengue,headache itching pain red spots severe itching vomiting
+Dengue,fever pain
+Dengue,joint pain pain vomiting
+Dengue,itchy pain red spots
+Dengue,
+Dengue,fever high fever
+Dengue,chills fever vomiting
+Dengue,dizziness pain vomiting
+Dengue,fever itchy nausea red spots
+Dengue,rash skin rash
+Dengue,chills pain red spots
+Dengue,headache joint pain pain vomiting
+Dengue,pain vomiting
+Dengue,fatigue red spots
+Dengue,fatigue headache pain severe headache
+Dengue,fever headache
+Dengue,itchy
+Dengue,headache muscle pain pain red spots
+Dengue,fever
+Dengue,chills fever high fever pain
+Dengue,fever vomiting
+Dengue,fever headache pain
+Dengue,chills fever red spots
+Dengue,pain
+Dengue,chills fever headache high fever pain
+Dengue,chills fever high fever
+Dengue,chills fever pain
+Fungal infection,itching rash
+Fungal infection,itching rash severe itching
+Fungal infection,discolored patches itching nodular eruptions rash
+Fungal infection,itchy rash
+Fungal infection,itching
+Fungal infection,itchy
+Fungal infection,rash
+Fungal infection,
+Fungal infection,itching rash red spots
+Fungal infection,itching itchy
+Fungal infection,itching red spots
+Common Cold,coughing fever sneezing
+Common Cold,fever sneezing
+Common Cold,sneezing
+Common Cold,fever high fever sneezing
+Common Cold,chills
+Common Cold,
+Common Cold,wheezing
+Common Cold,coughing itchy
+Common Cold,coughing swelling
+Common Cold,fatigue itching
+Common Cold,fatigue
+Common Cold,difficulty breathing
+Common Cold,coughing
+Common Cold,chills sore throat
+Common Cold,chest pain coughing fever pain runny nose
+Common Cold,coughing pain
+Common Cold,watery eyes
+Common Cold,coughing puffy eyes
+Pneumonia,chest pain coughing pain
+Pneumonia,coughing
+Pneumonia,chills coughing
+Pneumonia,
+Pneumonia,chills
+Pneumonia,fever high fever sweating
+Pneumonia,coughing fatigue fever high fever
+Pneumonia,chills sweating
+Pneumonia,fever
+Pneumonia,fever sweating
+Pneumonia,fever high fever
+Pneumonia,chills coughing fatigue fever high fever sweating
+Pneumonia,chills coughing sweating
+Pneumonia,coughing sweating
+Pneumonia,chills difficulty breathing fatigue fever
+Pneumonia,chills difficulty breathing fatigue fever high fever sweating
+Pneumonia,chills lethargy sweating
+Pneumonia,sweating
+Pneumonia,coughing difficulty breathing
+Pneumonia,coughing fever high fever
+Dimorphic Hemorrhoids,constipation pain
+Dimorphic Hemorrhoids,
+Dimorphic Hemorrhoids,pain
+Dimorphic Hemorrhoids,itching
+Dimorphic Hemorrhoids,constipation itchy
+Dimorphic Hemorrhoids,itchy
+Dimorphic Hemorrhoids,bloody stools itching
+Dimorphic Hemorrhoids,itchy pain
+Dimorphic Hemorrhoids,constipation
+Arthritis,
+Arthritis,swelling
+Arthritis,weakness
+Arthritis,swelling weakness
+Acne,rash
+Acne,rash skin rash
+Acne,
+Acne,itchy rash
+Acne,itching rash
+Bronchial Asthma,coughing difficulty breathing fever
+Bronchial Asthma,coughing fever
+Bronchial Asthma,fatigue fever persistent cough
+Bronchial Asthma,coughing fever high fever
+Bronchial Asthma,fatigue fever
+Bronchial Asthma,fever high fever weakness
+Bronchial Asthma,fever
+Bronchial Asthma,coughing fever persistent cough
+Bronchial Asthma,fever persistent cough
+Bronchial Asthma,coughing fatigue fever
+Bronchial Asthma,fever high fever persistent cough
+Bronchial Asthma,coughing fever high fever persistent cough
+Bronchial Asthma,difficulty breathing fever
+Bronchial Asthma,coughing difficulty breathing fatigue fever
+Bronchial Asthma,difficulty breathing fever persistent cough
+Bronchial Asthma,fever high fever
+Bronchial Asthma,difficulty breathing fever high fever
+Bronchial Asthma,weakness
+Bronchial Asthma,difficulty breathing
+Hypertension,chest pain dizziness headache pain
+Hypertension,chest pain headache pain
+Hypertension,chest pain pain
+Hypertension,difficulty concentrating dizziness headache
+Hypertension,
+Hypertension,dizziness
+Hypertension,headache
+Hypertension,pain
+Hypertension,chest pain headache lightheadedness pain
+Hypertension,dizziness headache
+Migraine,blurred vision headache indigestion
+Migraine,headache indigestion
+Migraine,
+Migraine,blurred vision headache
+Migraine,headache
+Migraine,headache heartburn indigestion
+Migraine,dizziness headache indigestion
+Cervical spondylosis,back pain pain persistent cough weakness
+Cervical spondylosis,pain weakness
+Cervical spondylosis,back pain dizziness pain weakness
+Cervical spondylosis,back pain numbness pain
+Cervical spondylosis,back pain coughing numbness pain
+Cervical spondylosis,coughing numbness pain
+Cervical spondylosis,persistent cough weakness
+Cervical spondylosis,weakness
+Cervical spondylosis,back pain pain
+Cervical spondylosis,back pain pain weakness
+Cervical spondylosis,difficulty breathing weakness
+Cervical spondylosis,back pain dizziness pain persistent cough weakness
+Cervical spondylosis,back pain coughing pain weakness
+Cervical spondylosis,back pain dizziness numbness pain persistent cough
+Cervical spondylosis,back pain dizziness pain
+Cervical spondylosis,back pain numbness pain persistent cough
+Cervical spondylosis,back pain dizziness pain persistent cough
+Cervical spondylosis,
+Cervical spondylosis,back pain coughing pain
+Cervical spondylosis,coughing
+Jaundice,abdominal pain fatigue fever high fever itching pain vomiting
+Jaundice,pain
+Jaundice,fever high fever nausea
+Jaundice,fever rash
+Jaundice,abdominal pain fever itching pain severe itching vomiting
+Jaundice,fever itching nausea pain
+Jaundice,fever itching pain
+Jaundice,itching nausea
+Jaundice,abdominal pain fatigue fever itchy pain vomiting
+Jaundice,fever
+Jaundice,fever itchy
+Jaundice,fever high fever
+Jaundice,itchy
+Jaundice,itching nausea pain
+Jaundice,fever high fever pain
+Jaundice,fever nausea rash
+Jaundice,nausea pain vomiting
+Jaundice,fever high fever nausea pain
+Jaundice,abdominal pain fatigue fever high fever itching pain severe itching vomiting
+Jaundice,fatigue fever nausea rash
+Jaundice,abdominal pain fever itchy pain vomiting
+Jaundice,abdominal pain fatigue fever itching pain vomiting weight loss
+Jaundice,fever itching nausea pain severe itching
+Jaundice,abdominal pain fatigue fever itching pain severe itching vomiting weight loss
+Jaundice,fatigue fever pain
+Malaria,chills fever headache high fever itching severe itching sweating vomiting
+Malaria,chills headache itching vomiting
+Malaria,chills headache nausea
+Malaria,chills fever headache high fever nausea sweating
+Malaria,chills fever headache high fever itching
+Malaria,chills fever headache itching sweating vomiting
+Malaria,chills fever headache high fever vomiting
+Malaria,chills fever headache high fever nausea
+Malaria,chills fever headache high fever itching muscle pain nausea pain sweating vomiting
+Malaria,chills fever headache high fever itching nausea severe itching vomiting
+Malaria,chills headache itching nausea severe itching vomiting
+Malaria,chills fever headache high fever itching nausea severe itching
+Malaria,chills fever headache high fever itching muscle pain nausea pain severe itching sweating vomiting
+Malaria,chills headache itching nausea vomiting
+Malaria,chills fever headache high fever itching nausea
+Malaria,chills fever headache nausea vomiting
+Malaria,chills fever headache high fever itching nausea severe itching sweating
+Malaria,chills headache muscle pain nausea pain
+Malaria,chills fever headache high fever muscle pain nausea pain sweating
+Malaria,chills fever headache high fever itching nausea severe itching sweating vomiting
+urinary tract infection,bloody urine fever foul smelling urine low fever nausea pain pain during urination pelvic pain vomiting
+urinary tract infection,pain pain during urination
+urinary tract infection,burning sensation foul smelling urine pain
+urinary tract infection,
+urinary tract infection,fever pain
+urinary tract infection,pain
+urinary tract infection,fever low fever pain
+urinary tract infection,fever
+urinary tract infection,headache
+urinary tract infection,fever nausea
+urinary tract infection,nausea
+urinary tract infection,back pain headache pain
+urinary tract infection,bloody urine
+urinary tract infection,pain pelvic pain
+allergy,coughing itchy runny nose sneezing
+allergy,sneezing sore throat swelling
+allergy,itchy itchy eyes swelling
+allergy,chest pain nasal congestion pain
+allergy,difficulty breathing fever headache wheezing
+allergy,cramps fever muscle aches sore throat
+allergy,difficulty swallowing loss of appetite sore throat
+allergy,fatigue flaky skin puffy eyes tingling sensation
+allergy,chest pain cramps diarrhea difficulty breathing nausea pain stomach cramps
+allergy,itchy watery eyes
+allergy,runny nose
+allergy,sneezing sore throat
+allergy,nasal congestion
+allergy,fever headache wheezing
+allergy,cramps pain
+allergy,sore throat
+allergy,dry skin
+allergy,nausea swelling
+allergy,headache
+allergy,
+allergy,itching
+allergy,cramps itchy
+allergy,swelling
+allergy,nausea
+allergy,fatigue
+allergy,headache itchy watery eyes
+allergy,cramps
+allergy,headache itching swelling
+gastroesophageal reflux disease,burning sensation
+gastroesophageal reflux disease,heartburn indigestion pain
+gastroesophageal reflux disease,belching burping chest pain pain
+gastroesophageal reflux disease,hiccups sour taste
+gastroesophageal reflux disease,bad breath sour taste tingling sensation
+gastroesophageal reflux disease,chest pain heartburn indigestion pain
+gastroesophageal reflux disease,difficulty swallowing heartburn loss of appetite tingling sensation
+gastroesophageal reflux disease,bad breath belching hoarseness pain sore throat
+gastroesophageal reflux disease,pain
+gastroesophageal reflux disease,
+gastroesophageal reflux disease,heartburn indigestion
+gastroesophageal reflux disease,belching burping
+gastroesophageal reflux disease,sour taste
+gastroesophageal reflux disease,heartburn nausea
+gastroesophageal reflux disease,sore throat
+gastroesophageal reflux disease,bad breath
+gastroesophageal reflux disease,bad breath sore throat
+gastroesophageal reflux disease,chest pain pain
+drug reaction,joint pain metallic taste muscle pain pain
+drug reaction,headache muscle twitching tremors
+drug reaction,fever
+drug reaction,tremors
+drug reaction,chest pain pain
+drug reaction,flaky skin itching
+drug reaction,hair loss increased dandruff itchy
+drug reaction,brain fog
+drug reaction,mood swings
+drug reaction,weight gain
+drug reaction,
+drug reaction,change in taste pain
+drug reaction,headache
+drug reaction,nausea
+drug reaction,flaky skin
+drug reaction,hair loss itching
+drug reaction,change in taste
+drug reaction,chest pain nausea pain
+drug reaction,itchy
+drug reaction,dizziness headache
+drug reaction,brain fog confusion
+drug reaction,muscle pain pain
+peptic ulcer disease,burning sensation heartburn indigestion
+peptic ulcer disease,bloating loss of appetite weight loss
+peptic ulcer disease,belching bloating difficulty swallowing sour taste
+peptic ulcer disease,anemia bloody stools
+peptic ulcer disease,abdominal cramps bloating cramps gas gnawing hunger spasms
+peptic ulcer disease,constipation diarrhea fatigue loss of appetite
+peptic ulcer disease,abdominal pain pain
+peptic ulcer disease,abdominal pain fatigue loss of appetite pain
+peptic ulcer disease,belching burping
+peptic ulcer disease,pain weight loss
+peptic ulcer disease,heartburn indigestion nausea
+peptic ulcer disease,bloating
+peptic ulcer disease,sour taste
+peptic ulcer disease,bloody stools
+peptic ulcer disease,bloating gas
+peptic ulcer disease,
+peptic ulcer disease,pain
+peptic ulcer disease,dark tarry stools
+peptic ulcer disease,diarrhea
+peptic ulcer disease,heartburn indigestion
+peptic ulcer disease,bloating cramps gas
+diabetes,dry mouth frequent urination increased thirst
+diabetes,blurred vision fatigue
+diabetes,dry mouth
+diabetes,numbness tingling sensation
+diabetes,difficulty concentrating
+diabetes,fatigue muscle twitching tremors
+diabetes,skin irritations
+diabetes,
+diabetes,difficulty breathing sweating yeast infections
+diabetes,palpitations sore throat
+diabetes,dizziness lightheadedness
+diabetes,tingling sensation
+diabetes,palpitations
+diabetes,sweating yeast infections
+diabetes,fatigue lightheadedness
+diabetes,yeast infections
+diabetes,skin rash

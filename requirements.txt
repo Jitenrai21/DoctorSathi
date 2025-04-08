@@ -11,3 +11,4 @@ torch
 fuzzywuzzy
 python-Levenshtein
 gensim
+imbalanced-learn
