@@ -12,3 +12,4 @@ fuzzywuzzy
 python-Levenshtein
 gensim
 imbalanced-learn
+xgboost

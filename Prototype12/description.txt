@@ -1,2 +1,14 @@
 Trying on smaller architecture.
 Augmentation using SMOTE and embedding context.
+Tried on original dataset 'Symptoms2Diseases.csv' -> train_model.ipynb
+
+
+Trying on Preprocssed Dataset:
+Tried TFIDF and Embedding,
+Since the embedding-based approach is clearly superior, let’s focus on optimizing it. Here’s a plan to enhance performance:
+
+Model Optimization: Tune RandomForest hyperparameters or switch to a more powerful classifier (e.g., XGBoost).
+Feature Engineering: Refine embeddings (e.g., weighted symptom averaging, disease-specific priors).
+Cross-Validation: Use k-fold cross-validation for a more robust performance estimate.
+Error Analysis: Identify misclassified diseases to target specific improvements.
+Data Quality: Ensure synthetic embeddings align with real symptom patterns.
