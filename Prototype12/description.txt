@@ -12,3 +12,158 @@ Feature Engineering: Refine embeddings (e.g., weighted symptom averaging, diseas
 Cross-Validation: Use k-fold cross-validation for a more robust performance estimate.
 Error Analysis: Identify misclassified diseases to target specific improvements.
 Data Quality: Ensure synthetic embeddings align with real symptom patterns.
+
+Prototype12 (Day2):
+Specifications and Structure
+Dataset:
+Source: preprocessed_dataset.csv (deduplicated version).
+Shape: 477 rows, 2 columns (label, extracted_symptoms).
+Classes: 24 diseases, imbalanced (e.g., "Dengue": 48, "Arthritis": 4).
+Missing Data: 20 rows with NaN in extracted_symptoms.
+
+Embeddings:
+Source: BioWordVec_PubMed_MIMICIII_d200.vec.bin (200-dimensional vectors, 16,545,452 terms).
+Conversion: Symptoms to embeddings via averaging word vectors, with NaN handled as zero vectors.
+
+Augmentation:
+Method: SMOTE with k_neighbors=3.
+Result: Augmented to 1152 rows (48 per class), balancing the dataset.
+Symptom Regeneration: embedding_to_symptoms with a small symptom list (9 unique terms in output), disease-specific priors for "Psoriasis" and "Dengue", and a 0.3 similarity threshold.
+
+Models:
+RandomForest (Optimized):
+Grid search over n_estimators=[100, 200, 300], max_depth=[10, 20, 30], min_samples_split=[2, 5, 10].
+Best params: {'max_depth': 20, 'min_samples_split': 2, 'n_estimators': 100}.
+F1-Score: 0.7302 (test set).
+
+XGBoost:
+Default params with eval_metric="mlogloss".
+F1-Score: 0.7270 (test set), Cross-validated F1: 0.7505 (± 0.1025).
+Baseline Comparison: Your original F1 was 0.3831; Cell 8 (unoptimized RF) hit 0.7574.
+
+Evaluation:
+Train/Test Split: 80/20 (921 train, 231 test).
+Metrics: Weighted F1-score, classification report, misclassification analysis.
+Misclassifications: 58 instances across multiple classes (e.g., "Dengue" → "Chicken pox", "Typhoid" → "Jaundice").
+
+Issues:
+Warnings: joblib (physical cores not found), gensim (NaN in cosine similarities due to zero vectors).
+Symptom Vocabulary: Only 9 unique symptoms in augmented data (vs. 141 expected).
+
+Strengths
+Embedding Success: The BioWordVec embeddings significantly outperform TF-IDF (0.7574 vs. 0.3433 in earlier runs), showing their ability to capture medical semantics.
+Class Balancing: SMOTE effectively balances the dataset (1152 rows, 48 per class), improving minority class performance (e.g., "Arthritis" F1: 0.87).
+Model Exploration: You’ve tested RandomForest (optimized) and XGBoost, with XGBoost’s cross-validated F1 (0.7505) suggesting robustness.
+Error Analysis: The misclassification summary highlights specific confusion patterns, providing actionable insights.
+
+Weaknesses
+Low Symptom Diversity:
+Problem: Only 9 unique symptoms in augmented data (Cell 6), far below the 141 from your preprocessing analysis.
+Cause: The known_symptoms list is a placeholder (4 terms), not your full list, limiting regenerated symptoms.
+Impact: Reduces discriminative power, as seen in overlapping predictions (e.g., "Dengue" → "Typhoid").
+
+Suboptimal F1-Scores:
+Current: 0.7302 (RF), 0.7270 (XGBoost test), 0.7505 (XGBoost CV).
+Previous Peak: 0.7574 (Cell 8, unoptimized RF).
+Gap: Below your potential target (e.g., 0.8+), with high CV variance (±0.1025) indicating instability.
+
+Zero Vectors:
+Problem: 20 NaN rows and possibly more empty symptom strings yield zero embeddings, diluting the dataset (e.g., row 4 in Cell 6 output).
+Impact: Adds noise, triggering gensim NaN warnings and weakening model training.
+
+Limited Disease Priors:
+Problem: Only "Psoriasis" and "Dengue" have symptom priors, leaving 22 diseases without guidance.
+Impact: Synthetic symptoms may lack disease-specific relevance (e.g., "nausea" for "Psoriasis" in row 2).
+
+Model Tuning:
+Problem: XGBoost uses defaults; RandomForest tuning didn’t surpass the unoptimized 0.7574.
+Impact: Untapped potential in hyperparameter optimization.
+
+---------------------------------------------------------------------
+
+Goals
+Target F1-Score: Aim for 0.8+ (a realistic stretch from 0.7574).
+Focus: Fix symptom regeneration, enhance embeddings, and optimize XGBoost.
+
+Steps
+Fix Symptom Regeneration:
+Use your full 141-term known_symptoms list (from your preprocessing analysis).
+Expand disease_symptom_priors to all 24 diseases using medical knowledge or your original dataset.
+Clean Zero Vectors:
+Filter out or impute NaN/empty rows before SMOTE to reduce noise.
+Optimize XGBoost:
+Tune hyperparameters with grid search to leverage its superior performance potential.
+Validate Robustness:
+Use cross-validation and a holdout set from the original 477 rows to ensure generalizability.
+
+----------------------------------------------------------------------
+
+From train_model2 file:
+
+Key Results Overview
+Dataset and Preprocessing
+Dataset Shape:
+Original: 477 rows (Cell 2, prior runs).
+Cleaned: 457 rows (20 rows with empty extracted_symptoms removed).
+
+Class Distribution:
+Largest: "Dengue" (47), smallest: "Arthritis" (3).
+24 classes remain, but imbalance is still present pre-augmentation.
+
+Symptoms:
+141 unique symptoms extracted (Cell 8), matching your preprocessing target
+
+Augmentation
+SMOTE:
+k_neighbors=2 applied successfully (Cell 5).
+Augmented shape: 1128 rows (24 classes × 47 samples each, based on "Dengue" as the max).
+
+Symptom Regeneration (Cell 9):
+Unique symptoms in augmented data: 115 (out of 141 possible).
+Sample rows show diverse, disease-relevant symptoms (e.g., "rash skin peeling scaly itchy" for "Psoriasis").
+
+Model Performance (XGBoost, Cell 10)
+Best Parameters: {'learning_rate': 0.3, 'max_depth': 6, 'n_estimators': 200, 'subsample': 0.8}.
+Weighted F1-Score: 0.7756 (test set, 226 samples).
+Cross-Validated F1-Score: 0.7733 (± 0.0825).
+Accuracy: 0.77.
+
+Classification Report Highlights:
+Strong Performers: "Arthritis" (F1: 1.00), "Migraine" (F1: 1.00), "Malaria" (F1: 0.97).
+Weak Performers: "Dengue" (F1: 0.44), "Varicose Veins" (F1: 0.36), "allergy" (F1: 0.47).
+Macro Avg F1: 0.76 (unweighted across classes).
+Weighted Avg F1: 0.78 (reflects class support).
+
+Detailed Performance Insights
+Classification Report
+Precision vs. Recall:
+High precision, low recall (e.g., "Typhoid": 1.00/0.57): Model is confident when predicting but misses instances.
+Low precision, high recall (e.g., "Dengue": 0.33/0.67): Model over-predicts, diluting accuracy.
+
+Support Variability: Test set (226 samples) has uneven class distribution (e.g., "Malaria": 14, "Dimorphic Hemorrhoids": 4), reflecting random split noise.
+
+Possible Misclassification Causes
+Symptom Overlap: Diseases like "Dengue", "Typhoid", and "Malaria" share "fever" and "pain", confusing the model.
+Synthetic Data Quality: SMOTE-generated embeddings might not fully capture disease-specific patterns, especially for minority classes with few original samples (e.g., "Arthritis": 3).
+
+Suggestions for Improvement
+1. Enhance Symptom Regeneration
+Increase Coverage:
+Lower the similarity threshold in embedding_to_symptoms (e.g., 0.25 → 0.2) to include more of the 141 symptoms (aim for 130+).
+Increase top_n (e.g., 5 → 7) for richer symptom combinations.
+Refine Priors:
+Manually adjust disease_symptom_priors for weak performers:
+"Dengue": Add "muscle pain", "eye pain" (distinct from "Typhoid").
+"Varicose Veins": Add "swelling", "visible veins".
+"allergy": Add "sneezing", "itchy eyes".
+Use medical references (e.g., CDC, Mayo Clinic) if frequency-based priors miss key symptoms.
+2. Mitigate Data Loss
+Impute Instead of Filter:
+Replace empty extracted_symptoms with a placeholder (e.g., "unknown") in Cell 2:
+Add "unknown" to known_symptoms and let embeddings handle it as a neutral term.
+Impact: Restores 477 rows, potentially improving real data representation.
+Fine-Tune XGBoost Further
+Expand Grid Search:
+Add parameters like colsample_bytree (e.g., [0.8, 1.0]) and gamma (e.g., [0, 1]) to control feature usage and regularization.
+Early Stopping:
+Use XGBoost’s early_stopping_rounds to prevent overfitting
